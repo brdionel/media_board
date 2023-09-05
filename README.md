@@ -97,7 +97,7 @@ También necesitará manejar los estados de carga/loading y error de obtener los
 Para el desarrollo de la aplicación deberá utilizar:
 
 - React / React Hooks
-- Redux
+- Recoil => https://recoiljs.org/
 - Librería de estilos https://mui.com/
 - Mobile friendly
 - TypeScript
