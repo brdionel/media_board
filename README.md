@@ -14,7 +14,7 @@ Pondremos el foco en obtener un **código simple, bien diseñado y organizado, e
 - Se deberá clonar este repositorio para poder modificarlo y completarlo con la resolución del proyecto.
 - Una vez que su código esté listo, suba el código a un repositorio público propio y envíenos el enlace a dicho repositorio para que lo revisaremos.
 
-> Se debe crear un proyecto de react con el framer Next.js => https://nextjs.org/docs/getting-started.
+> Se debe crear un proyecto de react con el framerwork Next.js => https://nextjs.org/docs/getting-started.
 
 
 ## Prueba técnica
