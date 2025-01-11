@@ -6,6 +6,7 @@ import classes from "./Series.module.css";
 import PopUp from "../../components/PopUp";
 import Filters from "../../components/Filters";
 import Pagination from "../../components/Pagination";
+import BlockErrorNoMatchesItems from "../../components/BlockErrorNoMatchesItems";
 
 const Series = () => {
   const fetchMedia = useMediaStore((state) => state.fetchMedia);
@@ -51,10 +52,12 @@ const Series = () => {
               items={series}
             />
           ) : (
-            <p>No series available.</p>
+            <BlockErrorNoMatchesItems />
           )}
         </main>
-        <Pagination totalResults={filteredItems.length} />
+        {filteredItems.length > 0 && (
+          <Pagination totalResults={filteredItems.length} />
+        )}
       </div>
       <PopUp />
     </Fragment>

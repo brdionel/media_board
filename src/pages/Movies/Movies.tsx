@@ -6,6 +6,7 @@ import PopUp from "../../components/PopUp";
 import ListItems from "../../components/ListItems";
 import Filters from "../../components/Filters";
 import Pagination from "../../components/Pagination";
+import BlockErrorNoMatchesItems from "../../components/BlockErrorNoMatchesItems";
 
 const Movies = () => {
   const fetchMedia = useMediaStore((state) => state.fetchMedia);
@@ -53,10 +54,12 @@ const Movies = () => {
             items={filteredItems}
           />
         ) : (
-          <p>No movies available.</p>
+          <BlockErrorNoMatchesItems />
         )}
       </main>
-      <Pagination totalResults={filteredItems.length} />
+      {filteredItems.length > 0 && (
+        <Pagination totalResults={filteredItems.length} />
+      )}
       <PopUp />
     </div>
   );
