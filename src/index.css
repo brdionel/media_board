@@ -1,0 +1,18 @@
+:root {
+  --color-blue: #82a8bd;
+  --color-gray: #808080;
+  --color-gray-light: #bcbcbc;
+  --color-dark: #141414;
+  --color-dark-light: #181818;
+  --color-light: #e5e5e5;
+  --color-yellow: #ffd200;
+  --color-white: #FFF;
+}
+
+
+body {
+  background-color: var(--color-dark);
+  font-family: 'Roboto', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
