@@ -24,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const page = parseInt(params.get("page") ?? 1);
+    const page = parseInt(params.get("page") ?? "1");
 
     setCurrentPage(page);
     setTotalResults(totalResults);
