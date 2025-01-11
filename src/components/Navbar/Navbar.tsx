@@ -5,6 +5,7 @@ import {
   Drawer,
   IconButton,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import NavListDrawer from "../NavListDrawer";
 import { Menu } from "@mui/icons-material";
@@ -51,6 +52,9 @@ const Navbar = () => {
           >
             <Menu />
           </IconButton>
+          <Typography sx={{ display: { xs: "flex", sm: "none" } }} variant="h6">
+            Media Board
+          </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navLinks.map((item) => (
               <Button
