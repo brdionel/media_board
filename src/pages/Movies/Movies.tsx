@@ -39,13 +39,15 @@ const Movies = () => {
     (item) => item.releaseYear >= filters.releaseYear
   );
 
+  console.log({ filteredItems, movies, filters });
+
   return (
     <div className={classes.moviesSection}>
       <h1 className={classes.title}>Movies</h1>
       <Filters />
 
       <main>
-        {movies.length > 0 ? (
+        {filteredItems.length > 0 ? (
           <ListItems
             handleSelectedMedia={handleSelectedMedia}
             items={filteredItems}

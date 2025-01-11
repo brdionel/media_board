@@ -45,7 +45,7 @@ const Series = () => {
         <h1 className={classes.title}>Series</h1>
         <Filters />
         <main>
-          {series.length > 0 ? (
+          {filteredItems.length > 0 ? (
             <ListItems
               handleSelectedMedia={handleSelectedMedia}
               items={series}
