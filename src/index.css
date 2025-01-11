@@ -9,7 +9,6 @@
   --color-white: #FFF;
 }
 
-
 body {
   background-color: var(--color-dark);
   font-family: 'Roboto', sans-serif !important;
