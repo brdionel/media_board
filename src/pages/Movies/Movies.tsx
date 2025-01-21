@@ -45,7 +45,7 @@ const Movies = () => {
   return (
     <div className={classes.moviesSection}>
       <h1 className={classes.title}>Movies</h1>
-      <Filters />
+      {/* <Filters /> */}
 
       <main>
         {filteredItems.length > 0 ? (

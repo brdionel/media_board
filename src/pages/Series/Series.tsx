@@ -44,7 +44,7 @@ const Series = () => {
     <Fragment>
       <div className={classes.seriesSection}>
         <h1 className={classes.title}>Series</h1>
-        <Filters />
+        {/* <Filters /> */}
         <main>
           {filteredItems.length > 0 ? (
             <ListItems
