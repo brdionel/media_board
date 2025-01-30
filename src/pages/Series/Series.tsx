@@ -4,7 +4,6 @@ import { type MediaEntries } from "../../types";
 import ListItems from "../../components/ListItems";
 import classes from "./Series.module.css";
 import PopUp from "../../components/PopUp"
-import Filters from "../../components/Filters";
 import Pagination from "../../components/Pagination";
 import BlockErrorNoMatchesItems from "../../components/BlockErrorNoMatchesItems";
 
