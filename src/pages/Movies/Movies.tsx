@@ -4,7 +4,6 @@ import classes from "./Movies.module.css";
 import { MediaEntries } from "../../types";
 import PopUp from "../../components/PopUp";
 import ListItems from "../../components/ListItems";
-import Filters from "../../components/Filters";
 import Pagination from "../../components/Pagination";
 import BlockErrorNoMatchesItems from "../../components/BlockErrorNoMatchesItems";
 
@@ -45,7 +44,6 @@ const Movies = () => {
   return (
     <div className={classes.moviesSection}>
       <h1 className={classes.title}>Movies</h1>
-      {/* <Filters /> */}
 
       <main>
         {filteredItems.length > 0 ? (
