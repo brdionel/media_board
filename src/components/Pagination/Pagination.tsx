@@ -26,7 +26,9 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const page = parseInt(params.get("page") ?? "1");
-
+    const sizeParam = params.get("size");
+    const size = sizeParam ? parseInt(sizeParam, 10) : pageSize;
+    setPageSize(size)
     setCurrentPage(page);
     setTotalResults(totalResults);
   }, [
@@ -41,13 +43,13 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
-    navigate(`?page=${newPage}`);
+    navigate(`?page=${newPage}&size=${pageSize}`);
   };
 
   const handlePageSizeChange = (newPageSize: number) => {
     setPageSize(newPageSize);
     setCurrentPage(1); // Volver a la primera página cuando se cambia el tamaño
-    navigate(`?page=1`);
+    navigate(`?page=1&size=${newPageSize}`);
   };
 
   return (
