@@ -78,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
             id="demo-simple-select"
             value={pageSize}
             label="Results per page:"
-            onChange={(e) => handlePageSizeChange(parseInt(e.target.value))}
+            onChange={(e) => handlePageSizeChange(parseInt(e.target.value as string, 10))}
             sx={{
               color: "#333", // Texto oscuro
               backgroundColor: "#fff", // Fondo blanco
