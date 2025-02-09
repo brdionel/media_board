@@ -7,7 +7,6 @@ const PopUp = () => {
   const toggleDrawer = useMediaStore((state) => state.toggleDrawer);
   const isOpen = useMediaStore((state) => state.drawer);
   const mediaSelected = useMediaStore((state) => state.mediaSelected);
-  console.log({ isOpen });
 
   if (!isOpen || !mediaSelected) return null;
 
@@ -17,23 +16,23 @@ const PopUp = () => {
   };
 
   const handleBackgroundClick = (e: React.MouseEvent) => {
-    console.log("handleBackgroundClick");
+    console.log("handleBackgroundClick", {target: e.target, currentTarget: e.currentTarget});
     // Verifica si el clic fue fuera del contenido del popup
     if (e.target === e.currentTarget) {
       closeModal();
     }
+    
   };
 
   return (
     <Fragment>
       <div
         onClick={handleBackgroundClick}
-        className={`${classes.popUp} ${classes.showPopUp}`}
-      ></div>
-      <div className={`${isOpen ? classes.showPopUp : classes.closePopUp} `}>
+        className={`${classes.popUp} ${isOpen ? classes.showPopUp : classes.closePopUp}`}
+      >
         <div
           className={classes.popUpContent}
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()} // Evita que el modal se cierre al hacer clic dentro
         >
           <span className={classes.closeButtonContainer}>
             <button onClick={closeModal} className={classes.closeButton}>
@@ -59,6 +58,7 @@ const PopUp = () => {
       </div>
     </Fragment>
   );
+  
 };
 
 export default PopUp;
