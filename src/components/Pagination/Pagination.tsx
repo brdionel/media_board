@@ -6,6 +6,7 @@ import {
   ArrowBackIosNewOutlined,
   ArrowForwardIosOutlined,
 } from "@mui/icons-material";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 interface PaginationProps {
   totalResults: number;
@@ -51,28 +52,64 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
 
   return (
     <div className={classes.paginationContainer}>
-      <div className={classes.pageSizeSelectorContainer}>
-        <label className={classes.pageSizeSelectorLabel}>
+      <Box sx={{ display: "flex", gap: "1rem" }}>
+        <InputLabel
+          id="demo-simple-select-label"
+          sx={{
+            color: "#BCBCBC",
+            fontSize: ".8rem",
+            textWrap: "revert",
+            "&.Mui-focused": { color: "#BCBCBC" },
+          }}
+        >
           Results per page:
-          <select
-            className={classes.pageSizeSelector}
+        </InputLabel>
+        <FormControl
+          size="small"
+          fullWidth
+          sx={{
+            bgcolor: "#fff",
+            borderRadius: 1,
+            minWidth: 80 
+          }}
+        >
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={pageSize}
+            label="Results per page:"
             onChange={(e) => handlePageSizeChange(parseInt(e.target.value))}
+            sx={{
+              color: "#333", // Texto oscuro
+              backgroundColor: "#fff", // Fondo blanco
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#ccc", // Borde gris
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#888", // Borde más visible al pasar el mouse
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#333", // Borde más oscuro al enfocar
+              },
+              "& .MuiSvgIcon-root": {
+                color: "#333", // Color del icono del select
+              },
+            }}
           >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
-            <option value={20}>20</option>
-          </select>
-        </label>
-      </div>
+            <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={10}>10</MenuItem>
+            <MenuItem value={20}>20</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+
 
       <div className={classes.pageNavigation}>
         <button
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
-          className={`${classes.pageNavigationButton} ${
-            currentPage !== 1 ? classes.buttonBack : classes.buttonDisabled
-          }`}
+          className={`${classes.pageNavigationButton} ${currentPage !== 1 ? classes.buttonBack : classes.buttonDisabled
+            }`}
         >
           <ArrowBackIosNewOutlined />
         </button>
@@ -84,11 +121,10 @@ const Pagination: React.FC<PaginationProps> = ({ totalResults }) => {
         <button
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
-          className={`${classes.pageNavigationButton} ${
-            currentPage !== totalPages
-              ? classes.buttonForward
-              : classes.buttonDisabled
-          }`}
+          className={`${classes.pageNavigationButton} ${currentPage !== totalPages
+            ? classes.buttonForward
+            : classes.buttonDisabled
+            }`}
         >
           <ArrowForwardIosOutlined />
         </button>

@@ -4,14 +4,16 @@ import classes from "./Item.module.css";
 interface ItemProps {
   handleSelectedMedia: (selectedMedia: any) => void;
   item: MediaEntries;
+  delay: React.CSSProperties;
 }
 
-const Item: React.FC<ItemProps> = ({ handleSelectedMedia, item }) => {
+const Item: React.FC<ItemProps> = ({ handleSelectedMedia, item, delay }) => {
   return (
     <article
       key={item.title}
       className={classes.item}
       onClick={() => handleSelectedMedia(item)}
+      style={delay}
     >
       <div className={classes.overlay}></div>
       <img

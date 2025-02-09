@@ -23,13 +23,16 @@ const ListItems: React.FC<ListItemsProps> = ({
   return (
     <Fragment>
       <section className={classes.gridContainer}>
-        {paginatedItems.map((item) => (
+        {paginatedItems.map((item, index) => {
+          const delay = { animationDelay: `${index * 100}ms` };
+          return (
           <Item
             key={item.title}
             item={item}
             handleSelectedMedia={handleSelectedMedia}
+            delay={delay}
           />
-        ))}
+        )})}
       </section>
     </Fragment>
   );
